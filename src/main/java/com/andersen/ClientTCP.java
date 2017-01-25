@@ -21,14 +21,7 @@ public class ClientTCP {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (socket != null) {
-					socket.close();
-					socket = null;
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+            ServerTCPUtil.closeSocket(socket);
 		}
 	}
 
